@@ -14,3 +14,14 @@ cd ros-iron-cyclone
 docker build -t ros-iron-cyclone .
 ```
 
+## create3-sim-humble
+
+This contains ros2 humble and the create3 gazebo simulator. 
+
+To build the image, run 
+
+```
+cd create3-sim-humble
+docker build -t create3-sim-humble .
+```
+
