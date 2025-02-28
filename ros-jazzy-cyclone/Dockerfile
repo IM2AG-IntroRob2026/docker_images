@@ -4,6 +4,7 @@ FROM osrf/ros:jazzy-desktop
 # Install CycloneDDS
 RUN apt-get update && apt-get install -y \
     ros-jazzy-rmw-cyclonedds-cpp \
+    ros-jazzy-irobot-create-msgs \
     && rm -rf /var/lib/apt/lists/*
 
 # Set CycloneDDS as the default DDS implementation

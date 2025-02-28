@@ -1,4 +1,4 @@
-# Use the official ROS Jazzy base image
+# Use the official ROS Iron base image
 FROM osrf/ros:iron-desktop
 
 # Install CycloneDDS
