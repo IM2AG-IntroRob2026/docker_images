@@ -11,17 +11,21 @@ docker build -t image-name .
 ## Starting an image
 Since we want to run ROS2, we need network access from the container to the host. This is achieved with the option `--net=host`. For the simulator, we also need display. The command depends whether we have native ubuntu or wsl in Windows. 
 
+If your ROS2 workspace is in ${HOME}/ros2_ws, it can be mounted in /root/ros2_ws using the option `-v ${HOME}/ros2_ws:/root/ros2_ws` 
+
 ### Ubuntu with X display
 ```
 docker run -it --net=host --privileged \
-    --env="DISPLAY=$DISPLAY" \
-    --volume="${XAUTHORITY}:/root/.Xauthority" \
-    image-name
+            --volume=${HOME}/ros2_ws:/root/ros2_ws \
+            --env="DISPLAY=$DISPLAY" \
+            --volume="${XAUTHORITY}:/root/.Xauthority" \
+            image-name
 ```
 
 ### In Windows+WSL
 ```
 docker run -it --net=host --privileged \
+               -v ${HOME}/ros2_ws:/root/ros2_ws
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v /mnt/wslg:/mnt/wslg \
                -e DISPLAY=$DISPLAY \
@@ -66,14 +70,3 @@ ros2 launch irobot_create_gazebo_bringup create3_gazebo_aws_small.launch.py
 ```
 
 See https://github.com/iRobotEducation/create3_sim/tree/humble for more details.
-
-## Running with docker-compose
-
-Make sure docker-compose is installed and run 
-```
-docker-compose up -d 
-```
-in the image folder.  It will try to mount ~/ros2_ws in /root/ros2_ws. 
-
-
-

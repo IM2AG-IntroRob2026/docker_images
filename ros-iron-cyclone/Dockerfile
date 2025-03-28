@@ -23,4 +23,3 @@ RUN echo "source /root/create3_ws/install/setup.bash" >> ~/.bashrc
 
 # Set the entrypoint
 ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["bash"]
