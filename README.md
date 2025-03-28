@@ -69,7 +69,7 @@ See https://github.com/iRobotEducation/create3_sim/tree/humble for more details.
 
 ## Running with docker-compose
 
-Make sure docker-compose is installed and run 
+Make sure docker-compose is installed (see https://docs.docker.com/compose/install/linux/#install-using-the-repository) and run 
 ```
 docker-compose up -d 
 ```
