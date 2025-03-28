@@ -67,5 +67,13 @@ ros2 launch irobot_create_gazebo_bringup create3_gazebo_aws_small.launch.py
 
 See https://github.com/iRobotEducation/create3_sim/tree/humble for more details.
 
+## Running with docker-compose
+
+Make sure docker-compose is installed and run 
+```
+docker-compose up -d 
+```
+in the image folder.  It will try to mount ~/ros2_ws in /root/ros2_ws. 
+
 
 
