@@ -1,6 +1,10 @@
 # create3-dockers
 Docker images for connecting to create3 robots and/or running the simulator.
 
+On Ubuntu, install docker from [apt repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+
+On Windows, make sure to use docker with your WSL2 image of ubuntu. 
+
 ## Building an image
 Each image `image-name` is defined in the file `image-name/Dockerfile`. To build it, run 
 ```
@@ -11,7 +15,7 @@ docker build -t image-name .
 ## Starting an image
 Since we want to run ROS2, we need network access from the container to the host. This is achieved with the option `--net=host`. For the simulator, we also need display. The command depends whether we have native ubuntu or wsl in Windows. 
 
-If your ROS2 workspace is in ${HOME}/ros2_ws, it can be mounted in /root/ros2_ws using the option `-v ${HOME}/ros2_ws:/root/ros2_ws` 
+If your ROS2 workspace is in `${HOME}/ros2_ws`, it can be mounted in `/root/ros2_ws` using the option `-v ${HOME}/ros2_ws:/root/ros2_ws` 
 
 ### Ubuntu with X display
 ```
