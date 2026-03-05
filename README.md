@@ -29,7 +29,7 @@ docker run -it --net=host --privileged \
 ### In Windows+WSL
 ```
 docker run -it --net=host --privileged \
-               -v ${HOME}/ros2_ws:/root/ros2_ws
+               -v ${HOME}/ros2_ws:/root/ros2_ws \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v /mnt/wslg:/mnt/wslg \
                -e DISPLAY=$DISPLAY \
