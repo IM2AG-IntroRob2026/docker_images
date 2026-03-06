@@ -6,10 +6,10 @@ On Ubuntu, install docker from [apt repository](https://docs.docker.com/engine/i
 On Windows, make sure to use docker with your WSL2 image of ubuntu. 
 
 ## Building an image
-Each image `image-name` is defined in the file `image-name/Dockerfile`. To build it, run 
+Each image `image-name` is defined in the file `image-name/Dockerfile`. E.g., to build `ros-iron-cyclone`, run 
 ```
-cd image-name
-docker build -t image-name .
+cd ros-iron-cyclone
+docker build -t ros-iron-cyclone .
 ```
 
 ## Starting an image
@@ -23,7 +23,7 @@ docker run -it --net=host --privileged \
             --volume=${HOME}/ros2_ws:/root/ros2_ws \
             --env="DISPLAY=$DISPLAY" \
             --volume="${XAUTHORITY}:/root/.Xauthority" \
-            image-name
+            ros-iron-cyclone bash
 ```
 
 ### In Windows+WSL
@@ -36,7 +36,7 @@ docker run -it --net=host --privileged \
                -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY \
                -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
                -e PULSE_SERVER=$PULSE_SERVER \
-               image-name
+               ros-iron-cyclone bash
 ```
 
 ### Ubuntu with Wayland (TODO) 
@@ -55,9 +55,10 @@ $ docker exec -it b61cc8874769 bash
 
 
 ## Available images
-### ros-iron-cyclone
-This docker image works with firmware I.0.0 Cyclone dds available at: https://iroboteducation.github.io/create3_docs/releases/i_0_0/
 
+### ros-iron-cyclone
+
+This docker image works with firmware I.0.0 Cyclone dds available at: https://iroboteducation.github.io/create3_docs/releases/i_0_0/
 
 ## create3-sim-humble
 
